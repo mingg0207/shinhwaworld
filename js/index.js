@@ -12,32 +12,65 @@ $(document).ready(function () {
 
 
 
+  // [scroll]
+  $(window).scroll(function(){
+    let pos = $(window).scrollTop();
+  
+    if (pos > 149) {
+      $(".floating ul li:last-child").addClass("on")
+    } else {
+      $(".floating ul li:last-child").removeClass("on")
+    }
+  
+    if (pos > 0) {
+      $(".header").css("background-color", "#fff")
+    } else {
+      $(".header").css("background-color", "")
+    }
+  })
+  
+  $(".floating ul li:last-child").click(function(){
+    $("html, body").stop().animate({
+        scrollTop: 0
+    }, 600)
+  })
+  
+  
+  
+
   // [header]
   $(".header .header-wrap .center .nav ul li, .header .submenu .submenu-list").mouseover(function () {
     $(".header").css("background-color", "#fff")
     $(".header .submenu").addClass("on");
-
+    
     
     let i = $(this).index();
     $(".header .submenu .submenu-wrap .submenu-list").hide().eq(i).show();
-
+    
     $(".header .submenu .submenu-list").mouseover(function(){
       $(".header .header-wrap .center .nav ul li").removeClass("on").eq(i).addClass("on");
     })
     
   }) .mouseout(function () { 
-        $(".header").css("background-color", "")
-        $(".header .submenu").removeClass("on");
-    });
+    let header_pos = $(window).scrollTop();
+    console.log(header_pos);
+    $(".header .submenu").removeClass("on");
+    
+    if(header_pos > 0){
+      $(".header").css("background-color", "#fff")
+    } else {
+      $(".header").css("background-color", "")
+    }
+  });
 
 
   
   $(".header .header-wrap .center .nav ul li").mouseout(function () {
-    
-    $(".header .submenu").mouseout(function(){
-      $(".header .header-wrap .center .nav ul li").removeClass("on")
-      $(".header .submenu .submenu-wrap .submenu-list").hide();
-    })
+  
+  $(".header .submenu").mouseout(function(){
+    $(".header .header-wrap .center .nav ul li").removeClass("on")
+    $(".header .submenu .submenu-wrap .submenu-list").hide();
+  })
 
   });
   
@@ -248,31 +281,6 @@ $(document).ready(function () {
     swiper4.autoplay.start();
   })
 
-
-
-
-// [scroll]
-$(window).scroll(function(){
-  let pos = $(window).scrollTop();
-
-  if (pos > 149) {
-    $(".floating ul li:last-child").addClass("on")
-  } else {
-    $(".floating ul li:last-child").removeClass("on")
-  }
-
-  if (pos > 0) {
-    $(".header").css("background-color", "#fff")
-  } else {
-    $(".header").css("background-color", "")
-  }
-})
-
-$(".floating ul li:last-child").click(function(){
-  $("html, body").stop().animate({
-      scrollTop: 0
-  }, 600)
-})
 
 
 
