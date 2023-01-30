@@ -1906,6 +1906,12 @@ tbody {
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.2);
   transition: 0.5s;
+  display: none;
+}
+@media (max-width: 1350px) {
+  .window2 {
+    display: block;
+  }
 }
 .window2.on {
   left: 0;
@@ -1920,6 +1926,12 @@ tbody {
   background-color: #aaa;
   z-index: 1000;
   transition: 0.5s;
+  display: none;
+}
+@media (max-width: 1350px) {
+  .m-nav {
+    display: block;
+  }
 }
 .m-nav.on {
   right: 0;

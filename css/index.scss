@@ -2003,6 +2003,10 @@ tbody{
   z-index: 999;
   background-color: rgba(0,0,0,0.2);
   transition: 0.5s;
+  display: none;
+  @include media ("(max-width: 1350px)"){
+    display: block;
+  }
   &.on{
     left: 0;
   }
@@ -2017,6 +2021,10 @@ tbody{
   background-color: #aaa;
   z-index: 1000;
   transition: 0.5s;
+  display: none;
+  @include media ("(max-width: 1350px)"){
+    display: block;
+  }
   &.on{
     right: 0;
   }
