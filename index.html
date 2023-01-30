@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제주신화월드</title>
+
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="css/index.css">
+  
+
+  <script src="js/jquery-3.6.3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  
+  <script src="js/index.js"></script>
+</head>
+<body>
+  <!-- [header] -->
+  <div class="header">
+    <div class="header-wrap">
+      <div class="left">
+        <div class="weather">
+          <img src="images/icon_w_clear.svg" alt="w_clear">
+          <p>16.4</p>
+          <span>℃</span>
+        </div>
+      </div>
+      <div class="center">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="logo">
+          </a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="#">스페셜 오퍼</a></li>
+            <li><a href="#">호텔&amp;리조트</a></li>
+            <li><a href="#">어트렉션</a></li>
+            <li><a href="#">다이닝</a></li>
+            <li><a href="#">라이프스타일</a></li>
+            <li><a href="#">미팅&amp;이벤트</a></li>
+            <li><a href="#">신화빌라스</a></li>
+            <li><a href="#">카지노</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <div class="login">
+          <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">마이페이지</a></li>
+            <li>
+              <a href="#">
+                <p>KR</p>
+                <img src="images/lang_arrow.png" alt="lang">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="resv">
+          <div class="resv-btn">
+            <img src="images/icon_reservation.svg" alt="resv">
+            <p>예약</p>
+          </div>
+          <div class="resv-menu animate__animated">
+            <ul>
+              <li><a href="#">호텔&amp;리조트</a></li>
+              <li><a href="#">어트렉션</a></li>
+            </ul>
+            <div class="resv-content">
+              <div class="resv-list">
+                <div class="select resv-margin area">
+                  <p>호텔&amp;리조트 선택</p>
+                  <ul>
+                    <li class="option">메리어트관</li>
+                    <li class="option">서머셋</li>
+                    <li class="option">신화관</li>
+                    <li class="option">랜딩관</li>
+                  </ul>
+                </div>
+                
+                <div class="resv-date resv-margin chk-inout">
+                  <input type="text" id="chk-inout" title="예약 날짜 입력" class="reservation">
+                  <img src="images/icon_calendar.png" alt="calendar">
+                </div>
+                <div class="people">
+                  <div class="adult pp">
+                    <img src="images/icon_minus.png" alt="minus">
+                    <div class="people-data">
+                      <p>성인</p>
+                      <span></span>
+                    </div>
+                    <img src="images/icon_plus.png" alt="plus">
+                  </div>
+                  <div class="kids pp">
+                    <img src="images/icon_minus.png" alt="minus">
+                    <div class="people-data">
+                      <p>어린이</p>
+                      <span></span>
+                    </div>
+                    <img src="images/icon_plus.png" alt="plus">
+                  </div>
+                </div>
+                <div class="search">검색</div>
+              </div>
+              <div class="resv-list">
+                <div class="select resv-margin">
+                  <p>어트렉션 선택</p>
+                  <ul>
+                    <li class="option">신화테마파크</li>
+                    <li class="option">신화워터파크</li>
+                  </ul>
+                </div>
+                <div class="resv-date chk-date">
+                  <input type="text" id="chk-date" title="예약 날짜 입력" class="reservation">
+                  <img src="images/icon_calendar.png" alt="calendar">
+                </div>
+                <div class="search">검색</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- [서브메뉴] -->
+    <div class="submenu">
+      <div class="submenu-wrap">
+        <!-- 스페셜 오퍼 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">스페셜 오퍼</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">객실패키지</a></li>
+            <li>
+              <a href="#">이벤트</a>
+              <ul>
+                <li><a href="#">호텔&amp;리조트</a></li>
+                <li><a href="#">즐길거리</a></li>
+                <li><a href="#">다이닝</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li><a href="#">멤버쉽</a></li>
+            <li><a href="#">제휴 혜택</a></li>
+            <li><a href="#">엔드리스 고메 스토리</a></li>
+          </ul>
+        </div>
+        <!-- 호텔&리조트 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">호텔&amp;리조트</a href="#">
+          </div>
+          <ul>
+            <li>
+              <a href="#">메리어트관</a>
+              <ul>
+                <li><a href="#">객실</a></li>
+                <li><a href="#">부대시설</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">서머셋</a>
+              <ul>
+                <li><a href="#">객실</a></li>
+                <li><a href="#">부대시설</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">신화관</a>
+              <ul>
+                <li><a href="#">객실</a></li>
+                <li><a href="#">부대시설</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">랜딩관</a>
+              <ul>
+                <li><a href="#">객실</a></li>
+                <li><a href="#">부대시설</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- 어트렉션 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">어트렉션</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">신화테마파크</a></li>
+            <li><a href="#">신화워터파크</a></li>
+          </ul>
+        </div>
+        <!-- 다이닝 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">다이닝</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">시그니처 다이닝</a></li>
+            <li><a href="#">캐주얼 다이닝</a></li>
+            <li><a href="#">카페 &amp; 스낵</a></li>
+            <li><a href="#">바 &amp; 펍</a></li>
+          </ul>
+        </div>
+        <!-- 라이프스타일 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">라이프스타일</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">쇼핑</a></li>
+            <li><a href="#">뷰티 &amp; 웰니스</a></li>
+            <li><a href="#">엔터테인먼트</a></li>
+            <li><a href="#">편의점</a></li>
+          </ul>
+        </div>
+        <!-- 미팅 & 이벤트 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">미팅 &amp; 이벤트</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">오버뷰</a></li>
+            <li><a href="#">플랜 유어 이벤트</a></li>
+            <li><a href="#">웨딩&amp;가족 연회</a></li>
+            <li><a href="#">유용한 자료</a></li>
+          </ul>
+        </div>
+        <!-- 신화빌라스 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">신화빌라스</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">특별분양 안내</a></li>
+            <li><a href="#">프리미엄 콘도</a></li>
+            <li><a href="#">럭셔리 빌라형 콘도</a></li>
+          </ul>
+        </div>
+        <!-- 카지노 -->
+        <div class="submenu-list">
+          <div class="title">
+            <a href="#">카지노</a href="#">
+          </div>
+          <ul>
+            <li><a href="#">카지노 가이드</a></li>
+            <li><a href="#">게임 공간</a></li>
+            <li><a href="#">프로모션 &amp; 이벤트</a></li>
+            <li><a href="#">랜딩 프리빌리지</a></li>
+            <li><a href="#">카지노 다이닝</a></li>
+          </ul>
+        </div>
+        <!-- submenu-list 끝 -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- [main visual] -->
+  <div class="swiper main-visual">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/m_01.png" alt="main">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/m_02.png" alt="main">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/m_03.png" alt="main">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/m_04.png" alt="main">
+      </div>
+    </div>
+
+    <div class="scroll">
+      <p>scroll down</p>
+      <div class="arrow">
+        <img src="images/scroll_arrow.png" alt="scroll_arrow">
+        <img src="images/scroll_arrow.png" alt="scroll_arrow">
+      </div>
+    </div>
+
+    <div class="indicator">
+      <div class="auto-btn">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+
+
+  <!-- [special offer] -->
+  <div class="special">
+    <div class="special-wrap">
+      <div class="title">
+        <a href="#">
+          <h3>스페셜 오퍼</h3>
+        </a>
+      </div>
+      
+      <div class="swiper special-list">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="special-img">
+              <img src="images/c1-01.jpg" alt="offer">
+            </div>
+            <div class="special-desc">
+              <h3>[48시간] JSW DAY</h3>
+              <p>랜딩관 예약하면 메리어트관으로 호텔 업그레이드!</p>
+              <ul>
+                <li><p>· 호텔 업그레이드</p></li>
+                <li><p>· 모실 수영장 무료 이용</p></li>
+                <li><p>· 객실 미니바 무료 이용</p></li>
+                <li><p>· 신화테마파크 이용권</p></li>
+              </ul>
+              <div class="sub-desc">
+                <p>1박 <span>96,000</span> 원 부터</p>
+                <span>[예약 기간: 22.11.07 - 22.11.08]</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="special-img">
+              <img src="images/c1-02.jpg" alt="offer">
+            </div>
+            <div class="special-desc">
+              <h3>호캉스 IN 제주</h3>
+              <p>제주 최대 복합리조트를 합리적으로 즐길 수 있는 객실 전용 패키지</p>
+              <ul>
+                <li><p>· 신화테마파크 이용권</p></li>
+                <li><p>· [멤버 혜택] 1박당 1만원 식음 혜택</p></li>
+                <li><p>· [패밀리 혜택] 조식 선택 시 어린이 2인 무료</p></li>
+              </ul>
+              <div class="sub-desc">
+                <p>1박 <span>120,000</span> 원 부터</p>
+                <span>[투숙 기간: 22.01.01 - 22.12.31]</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="special-img">
+              <img src="images/c1-03.jpg" alt="offer">
+            </div>
+            <div class="special-desc">
+              <h3>올 인 월드 - SILVER &amp; GOLD</h3>
+              <p>더욱 알찬 제주여행을 위한 시그니처 올인클루시브 패키지</p>
+              <ul>
+                <li><p>· JSW 다이닝 조식, 런치, 디너</p></li>
+                <li><p>· 신화테마파크 3만원 바우처 &amp; 빅3 이용권</p></li>
+                <li><p>· 파더스가든 입장권, 플레이 거품목욕세트(6만원상당)</p></li>
+                <li><p>· [멤버 혜택] 1박당 1만원 식음 혜택</p></li>
+              </ul>
+              <div class="sub-desc">
+                <p>1박 <span>200,000</span> 원 부터</p>
+                <span>[투숙 기간: 22.01.01 - 22.12.31]</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="special-img">
+              <img src="images/c1-04.jpg" alt="offer">
+            </div>
+            <div class="special-desc">
+              <h3>패밀리 커넥팅룸</h3>
+              <p>커넥팅룸에서 프라이빗하게 즐기는 패밀리 호캉스</p>
+              <ul>
+                <li><p>· 커넥팅룸(2개 객실 연결)</p></li>
+                <li><p>· 조식 &amp; 카페 베트로 패밀리세트</p></li>
+                <li><p>· 신화테마파크 이용권</p></li>
+                <li><p>· [멤버 혜택] 1박당 1만원 식음 혜택</p></li>
+              </ul>
+              <div class="sub-desc">
+                <p>1박 <span>370,000</span> 원 부터</p>
+                <span>[예약 기간: 22.01.01 - 22.12.30]</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="special-img">
+              <img src="images/c1-05.jpg" alt="offer">
+            </div>
+            <div class="special-desc">
+              <h3>해피 투게더</h3>
+              <p>풀옵션 리조트 서머셋에서 즐기는 여유로운 가족여행</p>
+              <ul>
+                <li><p>· 신화테마파크 이용권, 카멜리아힐 입장권</p></li>
+                <li><p>· 성화정 패밀리세트</p></li>
+                <li><p>· [멤버 혜택] 1박당 1만원 식음 혜택</p></li>
+                <li><p>· 탐모라 수영장&amp;피트니스 무료 이용</p></li>
+              </ul>
+              <div class="sub-desc">
+                <p>1박 <span>460,000</span> 원 부터</p>
+                <span>[예약 기간: 22.01.01 - 22.12.30]</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="special-img">
+              <img src="images/c1-06.jpg" alt="offer">
+            </div>
+            <div class="special-desc">
+              <h3>제주 한 달 살기</h3>
+              <p>제주의 환상 숲과 문화생활을 함께 즐기는 한 달 살기</p>
+              <ul>
+                <li>
+                  <p>· 5성 호텔 - 랜딩, 신화, 메리어트</p>
+                  <p>리조트 - 서머셋(취사 가능)</p>
+                </li>
+                <li><p>· 랜딩, 신화, 메리어트 - 데일리 무료 세탁 서비스</p></li>
+                <li><p>· 조식 할인 혜택</p></li>
+              </ul>
+              <div class="sub-desc">
+                <p>7박 <span>726,000</span> 원 부터</p>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-button-next">
+        <img src="images/c1_right_arrow.png" alt="arrow">
+      </div>
+      <div class="swiper-button-prev">
+        <img src="images/c1_left_arrow.png" alt="arrow">
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+
+
+  <!-- [호텔&amp;리조트] -->
+  <div class="hotel">
+    <div class="title-wrap">
+      <div class="title">
+        <a href="#">
+          <h3>호텔&amp;리조트</h3>
+        </a>
+      </div>
+    </div>
+    <div class="hotel-wrap">
+      <div class="bg-img">
+        <div class="img-list">
+          <img src="images/marriott_01.jpg" alt="room">
+          <img src="images/marriott_02.jpg" alt="room">
+          <img src="images/marriott_03.jpg" alt="room">
+          <img src="images/marriott_04.jpg" alt="room">
+          <img src="images/marriott_05.jpg" alt="room">
+          <img src="images/marriott_06.jpg" alt="room">
+          <img src="images/marriott_07.jpg" alt="room">
+          <img src="images/marriott_08.jpg" alt="room">
+        </div>
+        <div class="img-list">
+          <img src="images/somerset_01.jpg" alt="room">
+          <img src="images/somerset_02.jpg" alt="room">
+          <img src="images/somerset_03.jpg" alt="room">
+          <img src="images/somerset_04.jpg" alt="room">
+        </div>
+        <div class="img-list">
+          <img src="images/shinhwa_01.jpg" alt="room">
+          <img src="images/shinhwa_02.jpg" alt="room">
+          <img src="images/shinhwa_03.jpg" alt="room">
+          <img src="images/shinhwa_04.jpg" alt="room">
+          <img src="images/shinhwa_05.jpg" alt="room">
+          <img src="images/shinhwa_06.jpg" alt="room">
+          <img src="images/shinhwa_07.jpg" alt="room">
+          <img src="images/shinhwa_08.jpg" alt="room">
+        </div>
+        <div class="img-list">
+          <img src="images/landing_01.jpg" alt="room">
+          <img src="images/landing_02.jpg" alt="room">
+          <img src="images/landing_03.jpg" alt="room">
+          <img src="images/landing_04.jpg" alt="room">
+        </div>
+      </div>
+      <div class="gradation-area">
+        <div class="room-wrap">
+          <div class="room-title">
+            <input type="radio" name="hotel" id="hotel1">
+            <input type="radio" name="hotel" id="hotel2">
+            <input type="radio" name="hotel" id="hotel3">
+            <input type="radio" name="hotel" id="hotel4">
+
+            <label for="hotel1">메리어트관</label>
+            <div class="room-list">
+              <p>메리어트에서만 누릴 수 있는 프리미엄 서비스와 차별화된 혜택</p>
+              <ul>
+                <li><a href="#">디럭스 킹</a></li>
+                <li><a href="#">디럭스 트윈</a></li>
+                <li><a href="#">프리미어 킹</a></li>
+                <li><a href="#">프리미어 트윈</a></li>
+                <li><a href="#">프리미어 패밀리</a></li>
+                <li><a href="#">디럭스 스위트</a></li>
+                <li><a href="#">프리미어 스위트</a></li>
+                <li><a href="#">프레지덴셜 스위트</a></li>
+              </ul>
+            </div>
+
+            <label for="hotel2">서머셋</label>
+            <div class="room-list">
+              <ul>
+                <li><a href="#">패밀리 스위트</a></li>
+                <li><a href="#">패밀리 스위트 온돌</a></li>
+                <li><a href="#">패밀리 스위트 레이싱룸</a></li>
+                <li><a href="#">패밀리 스위트 캠핑룸</a></li>
+              </ul>
+            </div>
+
+            <label for="hotel3">신화관</label>
+            <div class="room-list">
+              <ul>
+                <li><a href="#">슈페리어 킹</a></li>
+                <li><a href="#">슈페리어 킹 파크 뷰</a></li>
+                <li><a href="#">슈페리어 트윈</a></li>
+                <li><a href="#">슈페리어 트윈 파크 뷰</a></li>
+                <li><a href="#">디럭스 킹</a></li>
+                <li><a href="#">디럭스 패밀리 트윈</a></li>
+                <li class="long-text"><a href="#">디럭스 패밀리 트윈 코트야드 뷰</a></li>
+                <li><a href="#">주니어 스위트</a></li>
+              </ul>
+            </div>
+
+            <label for="hotel4">랜딩관</label>
+            <div class="room-list">
+              <ul>
+                <li><a href="#">슈페리어 킹</a></li>
+                <li><a href="#">슈페리어 트윈</a></li>
+                <li><a href="#">디럭스 킹</a></li>
+                <li><a href="#">디럭스 패밀리 트윈</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="room-img">
+            <div class="img-list">
+              <img src="images/marriott_01.jpg" alt="room">
+              <img src="images/marriott_02.jpg" alt="room">
+              <img src="images/marriott_03.jpg" alt="room">
+              <img src="images/marriott_04.jpg" alt="room">
+              <img src="images/marriott_05.jpg" alt="room">
+              <img src="images/marriott_06.jpg" alt="room">
+              <img src="images/marriott_07.jpg" alt="room">
+              <img src="images/marriott_08.jpg" alt="room">
+            </div>
+            <div class="img-list">
+              <img src="images/somerset_01.jpg" alt="room">
+              <img src="images/somerset_02.jpg" alt="room">
+              <img src="images/somerset_03.jpg" alt="room">
+              <img src="images/somerset_04.jpg" alt="room">
+            </div>
+            <div class="img-list">
+              <img src="images/shinhwa_01.jpg" alt="room">
+              <img src="images/shinhwa_02.jpg" alt="room">
+              <img src="images/shinhwa_03.jpg" alt="room">
+              <img src="images/shinhwa_04.jpg" alt="room">
+              <img src="images/shinhwa_05.jpg" alt="room">
+              <img src="images/shinhwa_06.jpg" alt="room">
+              <img src="images/shinhwa_07.jpg" alt="room">
+              <img src="images/shinhwa_08.jpg" alt="room">
+            </div>
+            <div class="img-list">
+              <img src="images/landing_01.jpg" alt="room">
+              <img src="images/landing_02.jpg" alt="room">
+              <img src="images/landing_03.jpg" alt="room">
+              <img src="images/landing_04.jpg" alt="room">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="attraction">
+    <div class="attraction-wrap">
+      <div class="title">
+        <a href="#">
+          <h3>어트렉션</h3>
+        </a>
+      </div>
+      <div class="content">
+        <div class="theme">
+          <div class="sub-title">
+            <a href="#">
+              <div class="title-box">
+                <h3>신화테마파크</h3>
+                <h3>신화테마파크</h3>
+              </div>
+            </a>
+          </div>
+          <div class="theme-img">
+            <img src="images/c3_theme.jpg" alt="park">
+            <div class="desc">
+              <p>테마파크 BEST 어트렉션</p>
+              <h3>오스카 스핀 앤 범프</h3>
+              <p>오스카와 함께 떠나는 잉카 정글 탐험.</p>
+              <p>마치 낙타등을 넘듯 출렁이며 스윙하는 바이킹과</p>
+              <p>회전 코스터가 결합된 짜릿한 어트렉션입니다.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="water">
+          <div class="sub-title">
+            <a href="#">
+              <div class="title-box">
+                <h3>신화워터파크</h3>
+                <h3>신화워터파크</h3>
+              </div>
+            </a>
+          </div>
+          <div class="water-img">
+            <img src="images/c3_water.jpg" alt="park">
+            <div class="desc">
+              <p>워터파크 BEST 어트렉션</p>
+              <h3>자이언트 더블 리프</h3>
+              <p>아시아 최초로 도입된 워터 어트렉션이자</p>
+              <p>또 하나의 신화워터파크 머스트 라이드!</p>
+              <p>지상 20m 높이에서 최대 4명이 함께 튜브를 타고</p>
+              <p>급경사를 미끄러져 내려오는 스릴 넘치는 워터 슬라이드입니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="dining">
+    <div class="dining-wrap">
+      <div class="title">
+        <a href="#">
+          <h3>다이닝</h3>
+        </a>
+      </div>
+      <div class="dining-menu">
+        <ul>
+          <li><a href="#">시그니처</a></li>
+          <li><a href="#">캐주얼</a></li>
+          <li><a href="#">카페&amp;스낵</a></li>
+          <li><a href="#">바&amp;펍</a></li>
+        </ul>
+      </div>
+      <div class="dining-content">
+
+        <!-- [signature] -->
+        <div class="slide-area">
+          <div class="swiper dining-swiper signature">
+            <div class="swiper-wrapper content-list">
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_01.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[뷔페] 스카이 온 파이브 다이닝</h3>
+                  <p>이국적인 뷰와 함께하는 프리미엄 뷔페 레스토랑</p>
+                  <p>셰프가 엄선하여 최상급의 식재료로 준비한 한식과 일식, 중식, 양식은 물론 제주 특산물을 사용한 스페셜 메뉴를 환상적인 뷰와 함께 경험해 보시기 바랍니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>01</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_02.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[뷔페] 랜딩 다이닝</h3>
+                  <p>계절에 따라 준비되는 특선 메뉴로 특별함을 더해주는 프리미엄 그랜드 뷔페, 랜딩 다이닝</p>
+                  <p>제주 청정바다에서 갓 잡아 올린 듯한 신선한 해산물로 준비한 가장 제주다운 음식을 즐기며 마치 해녀의 집에 초대받은 듯한 기분을 느껴보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>02</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_03.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[그릴] 제주선 더블랙</h3>
+                  <p>호텔 셰프가 직접 구워주는 192시간 숙성 흑돼지 철판구이</p>
+                  <p>1℃ 저온에서 192시간 동안 습식 숙성하여 육즙은 더 풍부해지고 고기는 부드러워진 제주선 더블랙만의 흑돼지 구이를 만나보세요. 최고의 맛을 선사하기 위해 가장 알맞은 온도와 조리 시간으로 호텔 셰프가 직접 철판에 구워 준비해드립니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>03</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_04.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[광둥식] 르 쉬느아</h3>
+                  <p>스타셰프가 빚어내는 정통과 품격이 살아있는 광둥요리, 르 쉬느아</p>
+                  <p>현지 셰프가 빚어내는 정통과 품격이 살아있는 광둥요리를 만나 보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>04</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_05.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[한식] 濟州膳제주선</h3>
+                  <p>제주 고유의 맛을 담아낸 정갈한 한상차림, 濟州膳제주선</p>
+                  <p>신선한 제철 식재료와 특산물로 정성껏 차린 한 상에 제주 자연과 계절을 고스란히 담았습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>05</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_06.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[동남아식] 신화테라스</h3>
+                  <p>탁 트인 창이 선사하는 여유로움과 함께 모두의 입맛을 사로잡는 레스토랑</p>
+                  <p>제주의 신선한 식재료를 활용한 다양한 메뉴로 모두의 입맛을 만족시키는 인터내셔널 조식 뷔페와, 현지 셰프가 직접 요리하여 오리지널 태국과 인도네시아의 맛을 경험할 수 있는 런치와 디너를 제공합니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>06</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/signature_07.jpg" alt="signature">
+                </div>
+                <div class="content-desc">
+                  <h3>[중식] 성화정</h3>
+                  <p>신선한 식재료로 건강한 맛을 선보이는 레스토랑</p>
+                  <p>아침에는 인터내셔널 뷔페로 여유를, 점심과 저녁에는 신선한 식재료로 맛과 정성을 담아 기본에 충실한 홈메이드 중식 요리를 즐겨보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>07</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-scrollbar">
+              <div class="background-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- [casual] -->
+        <div class="slide-area">
+          <div class="swiper dining-swiper casual">
+            <div class="swiper-wrapper content-list">
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_01.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>서유기 마라탕&amp;훠궈</h3>
+                  <p>중국 본토 특유의 마라 맛을 담아낸 서유기 마라탕&amp;훠궈</p>
+                  <p>수제 특유의 깊고 구수함, 담백함을 우려낸 훠궈(샤부샤부)에 제주 웰빙 야채가 퐁당~ 대한민국 No.1 맛집 사이트 추천 "식신"이 인정한 대만식 정통 딤섬류, 그 외에도 얼얼하고 알싸한 맛의 마라탕</p>
+                </div>
+                <div class="list-num">
+                  <span>01</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_02.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>서가장인 곱창</h3>
+                  <p>숙성도를 높인 곱창의 풍부한 맛을 선사하는 서가장인 곱창</p>
+                  <p>서가장인 곱창은 자체 곱창의 숙성도를 높여 곱이 한층 더 부드럽고 풍부하게 나오도록 심혈을 기울였습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>02</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_03.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>더 플레이스</h3>
+                  <p>밀라노 스타일의 이탈리안 비스트로, 더 플레이스</p>
+                  <p>패션과 디자인의 중심 도시인 밀라노의 감성을 전달하는 이탈리안 비스트로입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>03</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_04.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>크랩통</h3>
+                  <p>살아 숨 쉬는 킹크랩, 랍스터로 즐기는 특별한 한 끼, 크랩통</p>
+                  <p>다양하고 푸짐한 크랩 요리와 전복, 소라, 문어, 새우 등의 해산물 찜 요리를 합리적인 가격에 먹을 수 있는 전문점입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>04</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_05.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>제주 오일장반점</h3>
+                  <p>제주 서남쪽의 프리미어 중식 레스토랑</p>
+                  <p>제주산 등심을 이용한 탕수육과 자장면, 해산물이 들어간 짬뽕 등 풍부한 맛의 중식을 선보입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>05</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_06.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>소노라</h3>
+                  <p>오리지널 멕시코의 맛, 소노라</p>
+                  <p>옥수수 토르티야 위에 신선한 고기와 해산물을 얹어 특제 살사 소스와 함께 제공하는 빠스똘과 초리조 등 전통 타코를 경험해보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>06</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_07.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>신화 돌담집</h3>
+                  <p>참숯으로 구워 더욱 맛있는 흑돼지 구이, 신화 돌담집</p>
+                  <p>30년의 노하우를 담아 정성스럽게 준비한 신화 돌담집의 흑돼지 모둠구이를 즐겨보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>07</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_08.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>윤경양식당</h3>
+                  <p>두툼하게 육즙을 머금은 일품 돈까스, 윤경양식당</p>
+                  <p>돈까스, 함박스테이크, 유자된장목살구이, 미트볼 파스타 등 홈메이드 스타일의 경양식 메뉴를 제공합니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>08</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_09.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>화니</h3>
+                  <p>바싹 구운 불고기에 담긴 정성과 개운한 장의 맛, 화니</p>
+                  <p>각 지역을 대표하는 한식 메뉴에 명인이 만든 토속장으로 맛을 더한 한식 전문점입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>09</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_10.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>한라원</h3>
+                  <p>제주도 한식의 진수를 맛보다, 한라원</p>
+                  <p>제주 흑돼지, 문어, 전복으로 속을 채운 4색 수제만두와 가마솥에서 삶은 한우사골육수로 맛을 낸 전골 요리를 선보입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>10</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_11.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>제주 마리</h3>
+                  <p>건강한 맛을 추구하는, 제주 마리</p>
+                  <p>모든 조리과정을 전문 셰프가 신선한 재료들로만 조리하는 롤, 우동, 소바 전문점입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>11</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_12.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>고래라면</h3>
+                  <p>신선한 제주 해산물이 가득 담긴 고래라면</p>
+                  <p>문어 한 마리를 통째로 넣은 라면, 고소한 성게가 올라간 라면 등 제주 해산물로 맛을 낸 고래라면은 깊고 시원한 국물맛을 보장합니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>12</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/casual_13.jpg" alt="casual">
+                </div>
+                <div class="content-desc">
+                  <h3>BHC 치킨</h3>
+                  <p>휴가 중 치맥타임? 딜리버리서비스 OK!</p>
+                  <p>가족 &amp; 친구들과 함께하면 더할 나위 없는 치맥! BHC의 치킨 메뉴는 기본~ 다양한 안주도 준비되어 있습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>13</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-scrollbar">
+              <div class="background-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- [cafe&snack] -->
+        <div class="slide-area">
+          <div class="swiper dining-swiper cafe">
+            <div class="swiper-wrapper content-list">
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_01.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>디 아일렛 라운지</h3>
+                  <p>달콤한 휴식, 아름다운 음악이 있는 디 아일렛 라운지</p>
+                  <p>샹들리에의 화려한 불빛과 황금빛 인테리어가 조화로운 디 아일렛 라운지는 달콤한 케이크, 핑거푸드가 있는 만남과 휴식의 공간입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>01</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_02.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>엠 라운지</h3>
+                  <p>언제나 감미로운 티타임, 엠 라운지</p>
+                  <p>메리어트관 G층에 위치한 라운지 카페로 편안한 휴식과 비즈니스 미팅 모두에 적합한 공간입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>02</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_03.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>랜딩 델리</h3>
+                  <p>다채로운 디저트와 기프트를 만나는 곳, 랜딩 델리</p>
+                  <p>랜딩 델리는 예술적인 맛과 장식까지 더해 눈과 입을 모두 사로잡는 다양한 디저트를 선보입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>03</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_04.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>랜딩 라운지</h3>
+                  <p>달콤한 디저트와 함께하는 여유로운 티타임, 랜딩 라운지</p>
+                  <p>호텔 파티시에가 선사하는 다양한 디저트와 페이스트리의 달콤함을 느껴보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>04</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_05.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>더 코브</h3>
+                  <p>건강까지 생각한 프레시푸드</p>
+                  <p>매일 아침 호텔 셰프가 정성스럽게 준비하는 건강한 샌드위치와 신선한 주스까지 맛과 영양을 함께 고려한 완벽한 밸런스를 경험하세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>05</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_06.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>스타벅스 리저브</h3>
+                  <p>리저브 매장만의 차별화된 커피, 스타벅스 리저브</p>
+                  <p>다양한 추출 방식으로 색다른 커피를 경험할 수 있는 프리미엄 매장입니다. 스타벅스 리저브에서만 즐길 수 있는 리저브 커피의 깊고 풍부한 맛을 느껴보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>06</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_07.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>던킨도너츠</h3>
+                  <p>WORLD NO. 1 COFFEE &amp; DONUTS</p>
+                  <p>던킨도너츠는 70년의 역사를 지닌 세계 최대의 커피&amp;도넛 전문 브랜드로, 전 세계 26개국에서 11,3000여 개의 점포를 운영하고 있습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>07</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_08.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>쿵푸티</h3>
+                  <p>맛과 건강을 한 번에 잡은 글로벌 티브랜드</p>
+                  <p>차로 유명한 대만 타이중에서 시작된 TEA 브랜드로 깊고 진한 맛의 원차를 원료로 하고 꿀을 가미하여 차의 풍미를 더하였습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>08</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_09.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>하겐다즈</h3>
+                  <p>국내 NO. 1 프리미엄 아이스크림 브랜드</p>
+                  <p>1961년 론칭된 하겐다즈는 올해 60주년을 맞이했습니다. 철저한 장인정신으로 엄선한 세계 각국의 고품질의 원료만 사용, 하겐다즈만의 엄격한 원칙을 바탕으로 만든 아이스크림입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>09</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_10.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>리치망고</h3>
+                  <p>100% 리얼 망고셰이크, 리치망고</p>
+                  <p>상큼하면서도 달콤한 맛의 열대과일의 대명사인 망고. 비타민 A, C, D가 풍부하고합니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>10</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_11.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>베이커리 벨라</h3>
+                  <p>제주의 특별한 빵이 모인 곳</p>
+                  <p>빵 덕후들의 빵지 순례 코스! 제주에서 만날 수 있는 특별한 브레드와 디저트가 넘치는 벨라에서 건강한 브런치/런치를 즐겨보세요.</p>
+                </div>
+                <div class="list-num">
+                  <span>11</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_12.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>투썸플레이스</h3>
+                  <p>브런치를 즐기기 좋은 디저트 카페, 투썸플레이스</p>
+                  <p>서머셋 제주신화월드에 위치한 디저트 카페 투썸플레이스는 다양한 음료와 디저트, 케이크를 갖추고 있습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>12</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_13.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>오슬로</h3>
+                  <p>60초 후에 만나는 생우유 프리미엄 아이스크림, 오슬로</p>
+                  <p>신선한 생우유로 직접 아이스크림을 만드는 프리미엄 아이스크림 브랜드입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>13</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/cafe_14.jpg" alt="cafe">
+                </div>
+                <div class="content-desc">
+                  <h3>의문당 - 스터디&amp;북카페</h3>
+                  <p>클래식 음악이 함께하는 스터디 &amp; 북카페</p>
+                  <p>추사 김정희 선생님의 유배 당시, 아이들을 가르쳤던 대정읍 향교의 서당 이름을 딴 스터디 &amp; 북 카페 '의문당'은 조용한 공간 속에서 책과 함께 최고급 스페셜티 원두를 착한 가격에 맛볼 수 있습니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>14</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-scrollbar">
+              <div class="background-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- [bar&pub] -->
+        <div class="slide-area">
+          <div class="swiper dining-swiper bar">
+            <div class="swiper-wrapper content-list">
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/bar_01.jpg" alt="bar">
+                </div>
+                <div class="content-desc">
+                  <h3>카페 베트로</h3>
+                  <p>우리들의 놀이공간—엔터테인먼트 &amp; 스포츠펍, 카페 베트로</p>
+                  <p>제주의 밤을 더 다이내믹하게 만드는 곳, 카페 베트로는 엔터테인먼트와 스포츠를 함께 즐길 수 있는 스포츠 펍입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>01</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/bar_02.jpg" alt="bar">
+                </div>
+                <div class="content-desc">
+                  <h3>S BAR</h3>
+                  <p>시그니처 칵테일과 JSW 비어를 즐길 수 있는 컨템포러리 바, S BAR</p>
+                  <p>아름다운 제주의 밤에 트렌디한 감각을 더한 S BAR에서는 제주신화월드에서만 경험할 수 있는 크래프트 비어 'JSW 페일 에일'과 시그니처 칵테일 등의 다양한 음료와 스낵을 선보입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>02</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/bar_03.jpg" alt="bar">
+                </div>
+                <div class="content-desc">
+                  <h3>이자카야 안주</h3>
+                  <p>이자카야 안주(安酒)에서 맛있는 안주(按酒)와 함께 안주(安住)하세요</p>
+                  <p>매일 가장 신선한 연어와 참치를 회와 스시로 즐기고, 정성으로 우려낸 육수로 깊은 맛을 더한 나베 등의 다양한 안주와 주류를 맛볼 수 있는 일본식 주점입니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>03</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/bar_04.jpg" alt="bar">
+                </div>
+                <div class="content-desc">
+                  <h3>바온탑</h3>
+                  <p>신화관의 시그니처 '스카이풀'에서 즐기는 루프톱 바, 바온탑</p>
+                  <p>신화관의 시그니처로 꼽히는 '스카이풀'에 위치한 바온탑에는 에너지 넘치는 낮과 로맨틱한 밤이 공존합니다.</p>
+                </div>
+                <div class="list-num">
+                  <span>04</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="swiper-slide content-box">
+                <div class="content-img">
+                  <img src="images/bar_05.jpg" alt="bar">
+                </div>
+                <div class="content-desc">
+                  <h3>미드나잇 제주</h3>
+                  <p>감성포차 미드나잇 제주</p>
+                  <p>텐션 업 한 제주의 밤을 원하시나요?</p>
+                  <p>한국식 펍의 진한 감성과 흥 넘치는 음악으로 여행의 맛과 멋을 한껏 높여 줄 "미드나잇 제주"</p>
+                </div>
+                <div class="list-num">
+                  <span>05</span>
+                  <img src="images/dining_arrow.png" alt="arrow">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-scrollbar">
+              <div class="background-bar"></div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- [event] -->
+  <div class="event">
+    <div class="event-wrap">
+      <div class="title">
+        <a href="#">
+          <h3>이벤트</h3>
+        </a>
+      </div>
+    </div>
+    <div class="event-content">
+      <ul>
+          <li>
+            <a href="#">
+              <img src="images/event_01.jpg" alt="event">
+              <div class="event-gra">
+                <div class="event-desc">
+                  <h3>원더라이트</h3>
+                  <p>밤하늘을 아름답게 물들이는</p>
+                  <p>라이팅쇼와 불꽃놀이를 즐겨보세요.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/event_02.jpg" alt="event">
+              <div class="event-gra">
+                <div class="event-desc">
+                  <h3>신화 리워드</h3>
+                  <p>제주신화월드 내 매장에서 현금처럼 사용 가능한</p>
+                  <p>포인트를 적립해 드리는 멤버십 서비스입니다.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/event_03.jpg" alt="event">
+              <div class="event-gra">
+                <div class="event-desc">
+                  <h3>엔드리스 고메 스토리</h3>
+                  <p>제주신화월드 내 모든 식음 매장에서</p>
+                  <p>1+1 혜택을 매일 만나보세요.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <!-- [insta] -->
+  <div class="insta">
+    <div class="insta-wrap">
+      <div class="title">
+        <a href="#">
+          <h3>#신화그램</h3>
+        </a>
+      </div>
+    </div>
+    <div class="swiper insta-swiper">
+      <div class="swiper-wrapper insta-content">
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_01.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>책방지기가 추천하는 여행 도서</p>
+              <p>첫 번째 갈피</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_02.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>신나게 놀려면 에너지 충전은 제대로 해야지!!</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_03.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>신비로운 분위기의 하늘이 맞아주는 제주 여행의 어느 날</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_04.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>억새가 춤추고, 바람결에 가을 향기가 묻어나는 요즘</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_05.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>[48시간 타임 특가] 서머셋 슈퍼 얼리버드 따스한 가을 햇살이 내려앉은 서머셋의 아침</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_06.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>H A P P Y H A L L O W E E N</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_07.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>제주에서 떠나는 공룡 대모험</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide insta-img">
+          <img src="images/insta_08.jpg" alt="insta">
+          <div class="insta-desc-area">
+            <div class="insta-desc">
+              <div class="insta-icon">
+                <img src="images/shinhwagram_icon.png" alt="insta-icon">
+              </div>
+              <p>미식의 계절 가을을 더 풍성하게</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- [footer] -->
+  <div class="footer">
+    <div class="footer-wrap">
+      <div class="top">
+        <div class="text-nav">
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li class="bold"><a href="#">오시는 길</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">뉴스</a></li>
+            <li><a href="#">인재채용</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">교육 일자리 지원센터</a></li>
+            <li><a href="#">입점 문의</a></li>
+            <li><a href="#">사이트맵</a></li>
+          </ul>
+        </div>
+        <div class="sns-nav">
+          <ul>
+            <li><a href="#"><img src="images/footer-sns-facebook.png" alt="sns"></a></li>
+            <li><a href="#"><img src="images/footer-sns-instagram.png " alt="sns"></a></li>
+            <li><a href="#"><img src="images/footer-sns-youtube.png" alt="sns"></a></li>
+            <li><a href="#"><img src="images/footer-sns-blog.png" alt="sns"></a></li>
+            <li><a href="#"><img src="images/footer-sns-tripa.png" alt="sns"></a></li>
+            <li><a href="#"><img src="images/footer-sns-kakao.png" alt="sns"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="text-etc">
+          <ul>
+            <li class="bold"><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">면책고지</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">결산공고</a></li>
+          </ul>
+          <p>람정제주개발주식회사 | 대한민국 제주특별자치도 서귀포시 안덕면 녹차분재로 217 (우편번호 63521)</p>
+          <p>사업자등록번호: 616-86-09829 | 대표이사: 린촉추 | 통신판매업신고번호: 2017-안덕면-0024</p>
+          <p>Copyright 2019 Landing Jeju Development Co. Ltd.   All Rights Reserved</p>
+        </div>
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="images/logo2.png" alt="logo">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- [floating] -->
+  <div class="floating">
+    <ul>
+      <li><a href="#"><img src="images/f_path.png" alt="floating"></a></li>
+      <li><a href="#"><img src="images/f_reward.png" alt="floating"></a></li>
+      <li><a href="#"><img src="images/f_top.png" alt="floating"></a></li>
+    </ul>
+  </div>
+
+
+  <div class="window"></div>
+
+
+  <div class="m-header">
+    <div class="m-wrap">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="logo">
+        </a>
+      </div>
+      <div class="etc">
+        <ul>
+          <li>
+            <a href="#">
+              <p>KR</p>
+              <img src="images/lang_arrow.png" alt="lang">
+            </a>
+          </li>
+          <!-- <li class="m-hbg">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-hbg">
+    <ul>
+      <li class="line"></li>
+      <li class="line"></li>
+      <li class="line"></li>
+    </ul>
+  </div>
+
+  <div class="window2"></div>
+  <div class="m-nav">
+
+  </div>
+
+
+
+</body>
+</html>
