@@ -261,6 +261,11 @@ $(window).scroll(function(){
     $(".floating ul li:last-child").removeClass("on")
   }
 
+  if (pos > 0) {
+    $(".header").css("background-color", "#fff")
+  } else {
+    $(".header").css("background-color", "")
+  }
 })
 
 $(".floating ul li:last-child").click(function(){
@@ -278,7 +283,7 @@ $(".header .header-wrap .right .resv .resv-btn").click(function(){
 
     setTimeout(function() { 
       $(".header .header-wrap .right .resv .resv-menu").removeClass("animate__fadeOutUp"); 
-  }, 850);
+    }, 850);
 
   } else {
     $(".header .header-wrap .right .resv .resv-menu").removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");

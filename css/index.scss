@@ -135,7 +135,8 @@ tbody{
 .header{
   width: 100%;
   height: 144px;
-  position: absolute;
+  background-color: transparent;
+  position: fixed;
   transition: 0.3s;
   z-index: 999;
   @include media ("(max-width: 1350px)"){
@@ -1872,7 +1873,7 @@ tbody{
   width: 100%;
   height: 100px;
   background-color: #fff;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   align-items: center;
@@ -1921,7 +1922,7 @@ tbody{
 
 // [m-nav]
 .m-hbg{
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100px;
@@ -1995,7 +1996,7 @@ tbody{
 }
 
 .window2{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100%;
   width: 100%;
@@ -2015,7 +2016,7 @@ tbody{
 .m-nav{
   width: 567px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   right: -567px;
   top: 0;
   background-color: #aaa;
