@@ -53,7 +53,7 @@ $(document).ready(function () {
     
   }) .mouseout(function () { 
     let header_pos = $(window).scrollTop();
-    console.log(header_pos);
+    // console.log(header_pos);
     $(".header .submenu").removeClass("on");
     
     if(header_pos > 0){
@@ -157,70 +157,117 @@ $(document).ready(function () {
 
 // [special offer]
   var swiper2 = new Swiper(".swiper.special-list", {
-    slidesPerView: 3,
-    spaceBetween: 18,
+    breakpoints: {
+      768: {
+        slidesPerView: 3,  //브라우저가 768보다 클 때
+        spaceBetween: 18,
+      },
+    },
+    slidesPerView: 2,
+    spaceBetween: 17,
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
     },
     pagination:{
-      el: ".swiper-pagination",
+      el: ".special-wrap .swiper-pagination",
       clickable: true
-    }
+    },
   });
   
 
 
   
   // [hotel&resort]
-  $('#hotel1').prop('checked',true);
-  $("input").eq(0).addClass("chk");
-  $(".hotel .hotel-wrap .room-wrap .room-title .room-list").eq(0).find("ul li").eq(0).addClass("on");
+  $('.gradation-area #hotel1').prop('checked',true);
+  $(".gradation-area input").eq(0).addClass("chk");
+  $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title .room-list").eq(0).find("ul li").eq(0).addClass("on");
   $(".hotel .hotel-wrap .bg-img .img-list").eq(0).find("img").eq(0).fadeIn();
-  $(".hotel .hotel-wrap .room-wrap .room-img .img-list").eq(0).find("img").eq(0).fadeIn();
+  $(".hotel .hotel-wrap .gradation-area .room-wrap .room-img .img-list").eq(0).find("img").eq(0).fadeIn();
 
-  $(".hotel .hotel-wrap .room-wrap .room-title label").click(function(){
-    let click_index = $(".hotel .hotel-wrap .room-wrap .room-title label").index(this);
+  $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title label").click(function(){
+    let click_index = $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title label").index(this);
     $("input").removeClass("chk").eq(click_index).addClass("chk")
 
-    $(".hotel .hotel-wrap .room-wrap .room-title .room-list ul li").removeClass("on");
-    $(".hotel .hotel-wrap .room-wrap .room-title .room-list").eq(click_index).find("ul li").eq(0).addClass("on")
+    $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title .room-list ul li").removeClass("on");
+    $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title .room-list").eq(click_index).find("ul li").eq(0).addClass("on")
 
-    $(".hotel .hotel-wrap .bg-img .img-list img, .hotel .hotel-wrap .room-wrap .room-img .img-list img").hide();
+    $(".hotel .hotel-wrap .bg-img .img-list img, .hotel .hotel-wrap .gradation-area .room-wrap .room-img .img-list img").hide();
 
     $(".hotel .hotel-wrap .bg-img .img-list").eq(click_index).find("img").eq(0).fadeIn(500);
-    $(".hotel .hotel-wrap .room-wrap .room-img .img-list").eq(click_index).find("img").eq(0).fadeIn(500);
+    $(".hotel .hotel-wrap .gradation-area .room-wrap .room-img .img-list").eq(click_index).find("img").eq(0).fadeIn(500);
   
   })
 
-  // $(".hotel .hotel-wrap .room-wrap .room-title .room-list:nth-of-type(1) ul li").eq(0).addClass("on")
-
-  // $(".hotel .hotel-wrap .room-wrap .room-title label").click(function(){
-  //   let k = $(".hotel .hotel-wrap .room-wrap .room-title label").index(this);
-  //   console.log(k)
-
-  //   $(".hotel .hotel-wrap .room-wrap .room-title .room-list ul li").removeClass("on");
-  //   $(".hotel .hotel-wrap .room-wrap .room-title .room-list:nth-of-type("+(k+1)+") ul li").eq(0).addClass("on");
-  //   // ㄴ질문하기 > 자식을 찾는 find이용하면 좋다. / (문자열) ("데이터") ("+(변수)+")
-  
-
-  // })
 
 
-  $(".hotel .hotel-wrap .room-wrap .room-title .room-list ul li").click(function(){
+  $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title .room-list ul li").click(function(){
     let room_num = $(this).index();
     let hall_num = $("input").index($(".chk"));
     
-    console.log(hall_num)
+    // console.log(hall_num)
     
-    $(".hotel .hotel-wrap .room-wrap .room-title .room-list ul li").removeClass("on");
-    $(".hotel .hotel-wrap .room-wrap .room-title .room-list").eq(hall_num).find("ul li").eq(room_num).addClass("on")
+    $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title .room-list ul li").removeClass("on");
+    $(".hotel .hotel-wrap .gradation-area .room-wrap .room-title .room-list").eq(hall_num).find("ul li").eq(room_num).addClass("on")
 
-    $(".hotel .hotel-wrap .bg-img .img-list img, .hotel .hotel-wrap .room-wrap .room-img .img-list img").hide();
+    $(".hotel .hotel-wrap .bg-img .img-list img, .hotel .hotel-wrap .gradation-area .room-wrap .room-img .img-list img").hide();
     $(".hotel .hotel-wrap .bg-img .img-list").eq(hall_num).find("img").eq(room_num).fadeIn(500);
-    $(".hotel .hotel-wrap .room-wrap .room-img .img-list").eq(hall_num).find("img").eq(room_num).fadeIn(500);
+    $(".hotel .hotel-wrap .gradation-area .room-wrap .room-img .img-list").eq(hall_num).find("img").eq(room_num).fadeIn(500);
+  })
 
+
+  // [---------mobile hotel]
+  $('.m-gradation-area #m-hotel1').prop('checked',true);
+  $(".m-gradation-area input").eq(0).addClass("chk");
+  $(".hotel .hotel-wrap .bg-img .img-list").eq(0).find("img").eq(0).fadeIn();
+  $(".hotel .hotel-wrap .m-gradation-area .room-wrap .room-img").eq(0).show();
+
+  var swiper_mh = new Swiper(".swiper.room-img", {
+    slidesPerView: "1",
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
+    touchRatio: 0,
+    speed: 700,
+    direction: "horizontal",
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-btn-next',
+      prevEl: '.swiper-btn-prev',
+    },
+    loop: true,
+  });
+
+  
+  let label_idx = 0;
+  $(".hotel .hotel-wrap .m-gradation-area .room-wrap .room-title label").click(function(){
+    let click_index = $(".hotel .hotel-wrap .m-gradation-area .room-wrap .room-title label").index(this);
+    $("input").removeClass("chk").eq(click_index).addClass("chk")
+    swiper_mh[click_index].slideTo( 1, 500, false)
+
+    $(".hotel .hotel-wrap .bg-img .img-list img, .hotel .hotel-wrap .m-gradation-area .room-wrap .room-img").hide();
+
+    $(".hotel .hotel-wrap .bg-img .img-list").eq(click_index).find("img").eq(0).fadeIn(500);
+    $(".hotel .hotel-wrap .m-gradation-area .room-wrap .room-img").eq(click_index).fadeIn(500);
+  
+    label_idx = click_index;
+  })
+
+
+  $(".hotel .hotel-wrap .m-gradation-area .room-wrap .room-img .swiper-btn-prev, .hotel .hotel-wrap .m-gradation-area .room-wrap .room-img .swiper-btn-next, .hotel .hotel-wrap .m-gradation-area .room-wrap .room-img .swiper-pagination").click(function(){
+    console.log(label_idx);
+    let pg_idx = swiper_mh[label_idx].realIndex;
+    console.log(pg_idx);
+
+    $(".hotel .hotel-wrap .bg-img .img-list img").hide();
+
+    $(".hotel .hotel-wrap .bg-img .img-list").eq(label_idx).find("img").eq(pg_idx).fadeIn(500);
   })
 
 
@@ -230,7 +277,7 @@ $(document).ready(function () {
   var swiper3 = new Swiper(".swiper.dining-swiper", {
     freeMode: true,
     slidesPerView: "auto",
-    mousewheel: true, 
+    // mousewheel: true, 
     grabCursor: true,
     direction: "horizontal",
     scrollbar: {
@@ -290,11 +337,11 @@ $(".header .header-wrap .right .resv .resv-btn").click(function(){
     $(".header .header-wrap .right .resv .resv-menu").removeClass("animate__fadeInDown").addClass("animate__fadeOutUp");
 
     setTimeout(function() { 
-      $(".header .header-wrap .right .resv .resv-menu").removeClass("animate__fadeOutUp"); 
+      $(".header .header-wrap .right .resv .resv-menu").removeClass("on animate__fadeOutUp"); 
     }, 850);
 
   } else {
-    $(".header .header-wrap .right .resv .resv-menu").removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
+    $(".header .header-wrap .right .resv .resv-menu").removeClass("animate__fadeOutUp").addClass("animate__fadeInDown on");
   }
 
   $(".header .header-wrap .right .resv .resv-menu .resv-content .resv-list .select").removeClass("on");
@@ -459,8 +506,188 @@ $('input[id="chk-date"]').daterangepicker({
 $(".m-hbg ul").click(function(){
   $(this).toggleClass("on");
   $(".window2, .m-nav").toggleClass("on");
+
+  if($(".m-hbg ul").hasClass("on")){
+    $("html,body").css("overflow", "hidden");
+  } else {
+    $("html,body").css("overflow", "");
+  }
 })
 
+
+// [reservation]
+$(".m-nav .m-nav-wrap .m-top .resv .resv-btn").click(function(){
+  if($(".m-nav .m-nav-wrap .m-top .resv .resv-menu").hasClass("animate__fadeInDown")){
+    $(".m-nav .m-nav-wrap .m-top .resv .resv-menu").removeClass("animate__fadeInDown").addClass("animate__fadeOutUp");
+
+    setTimeout(function() { 
+      $(".m-nav .m-nav-wrap .m-top .resv .resv-menu").removeClass("on animate__fadeOutUp"); 
+    }, 850);
+
+  } else {
+    $(".m-nav .m-nav-wrap .m-top .resv .resv-menu").removeClass("animate__fadeOutUp").addClass("on animate__fadeInDown");
+  }
+
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .select").removeClass("on");
+})
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu > ul li").eq(0).addClass("on")
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list").eq(0).show();
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu > ul li").click(function(){
+  let tab_idx = $(this).index();
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu > ul li").removeClass("on").eq(tab_idx).addClass("on");
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list").hide().eq(tab_idx).show();
+
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .select").removeClass("on");
+})
+
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .people .adult span").text(adult_count)
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .people .kids span").text(kids_count)
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .people .adult img").click(function(){
+  let count_idx = $(this).index();
+
+  if (count_idx == 0) {
+    adult_count--;
+    if (adult_count < 0) {
+      adult_count = 0;
+    }
+  } else {
+    adult_count++;
+    if (adult_count == 5) {
+      adult_count = 4;
+    }
+  }
+
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .people .adult span").text(adult_count)
+})
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .people .kids img").click(function(){
+  let count_idx = $(this).index();
+
+  if (count_idx == 0) {
+    kids_count--;
+    if (kids_count < 0) {
+      kids_count = 0;
+    }
+  } else {
+  kids_count++;
+    if (kids_count == 5) {
+      kids_count = 4;
+    }
+  }
+
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .people .kids span").text(kids_count)
+})
+
+
+
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .select").click(function(){
+  $(this).toggleClass("on");
+  $(".window").show();
+})
+$(".window").click(function(){
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .select").removeClass("on");
+  $(".window").hide();
+})
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .resv-date input").click(function(){
+  $(".window").show();
+})
+$(".window").click(function(){
+  $(".window").hide();
+})
+
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .search").click(function(){
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list .select").removeClass("on");
+})
+
+
+// $("html").click(function(e){
+//   if($(".header .header-wrap .right .resv .resv-menu .resv-content .resv-list .select").hasClass("area")){
+//     $(".header .header-wrap .right .resv .resv-menu .resv-content .resv-list .select").removeClass("on")
+//   }
+// })
+
+
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list").eq(0).find(".select ul li").click(function() {
+  var text = $(this).html();
+  // console.log(text)
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list").eq(0).find(".select p").html(text);
+  $("#consultation-state-ul").toggleClass("on");
+})
+
+$(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list").eq(1).find(".select ul li").click(function() {
+  var text = $(this).html();
+  // console.log(text)
+  $(".m-nav .m-nav-wrap .m-top .resv .resv-menu .resv-content .resv-list").eq(1).find(".select p").html(text);
+  $("#consultation-state-ul").toggleClass("on");
+})
+
+$('input[id="m-chk-inout"]').daterangepicker();
+
+$('input[id="m-chk-inout"]').daterangepicker({
+  locale: {
+    "separator": " ~ ", 
+    "format": 'YYYY.MM.DD', 
+    "daysOfWeek": ["S", "M", "T", "W", "T", "F", "S"],
+    "monthNames": ["01 .", "02 .", "03 .", "04 .", "05 .", "06 .", "07 .", "08 .", "09 .", "10 .", "11 .", "12 ."]
+  },
+
+  minYear: 2023,
+  maxYear: 2053,
+  autoApply: true,
+  // "maxSpan": {
+  //     "days": 30
+  // },
+  startDate: "2023.01.27",
+  endDate: "2023.01.29",
+  minDate: "2023.01.27",
+  opens: "center"
+});
+
+
+$('input[id="m-chk-date"]').daterangepicker();
+
+$('input[id="m-chk-date"]').daterangepicker({
+  locale: {
+    "format": 'YYYY.MM.DD', 
+    "daysOfWeek": ["S", "M", "T", "W", "T", "F", "S"],
+    "monthNames": ["01 .", "02 .", "03 .", "04 .", "05 .", "06 .", "07 .", "08 .", "09 .", "10 .", "11 .", "12 ."]
+  },
+
+  singleDatePicker: true,
+  minYear: 2023,
+  maxYear: 2053,
+  autoApply: true,
+  // "maxSpan": {
+  //     "days": 30
+  // },
+  startDate: "2023.01.27",
+  endDate: "2023.01.29",
+  minDate: "2023.01.27",
+  opens: "center"
+});
+
+$(".m-nav .m-nav-wrap .m-menu > ul > li").click(function(){
+  let click_idx = $(this).index();
+
+  if($(".m-nav .m-nav-wrap .m-menu > ul > li").eq(click_idx).hasClass("on")){
+    $(".m-nav .m-nav-wrap .m-menu > ul > li").removeClass("on");
+    $(".m-nav .m-nav-wrap .m-menu > ul > li .m-submenu").removeClass("on");
+
+  } else {
+    $(".m-nav .m-nav-wrap .m-menu > ul > li").removeClass("on").eq(click_idx).addClass("on");
+    $(".m-nav .m-nav-wrap .m-menu > ul > li .m-submenu").removeClass("on");
+    $(".m-nav .m-nav-wrap .m-menu > ul > li").eq(click_idx).find(".m-submenu").addClass("on");
+  }
+
+})
 
 
 
